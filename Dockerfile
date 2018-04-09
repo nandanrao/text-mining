@@ -11,3 +11,7 @@ RUN python -m spacy download en_core_web_md && \
     python -m spacy download es_core_news_md && \
     python -m spacy download es && \
     python -m spacy download en
+
+COPY utils.py /home/jovyan/utils.py
+COPY migrants.ipynb /home/jovyan/migrants.ipynb
+COPY kaggle /home/jovyan/kaggle
