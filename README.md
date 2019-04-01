@@ -10,7 +10,7 @@ date: April, 2019
 
   * Informatiion Retrieval
   * NLP
-  * Preprocessing Preprocessing Preprocessing (Workshop)
+  * Preprocessing Preprocessing Preprocessing
 
 ---
 
@@ -64,9 +64,9 @@ We have collected a report of every resident in our community that has seen a gh
 
 Let's try again with the term: "People who see ghosts"
 
-"I don't believe \alert{people who see ghosts}", said Mannie, before spitting into the wind and riding his bike down the street at top speed. He then went home and ate peanut-butter and jelly sandwiches all day. Mannie really liked peanut-butter and jelly sandwiches. He ate them so much that his poor mother had to purchase a new jar of peanut butter every afternoon.
+"I don't believe **people who see ghosts**", said Mannie, before spitting into the wind and riding his bike down the street at top speed. He then went home and ate peanut-butter and jelly sandwiches all day. Mannie really liked peanut-butter and jelly sandwiches. He ate them so much that his poor mother had to purchase a new jar of peanut butter every afternoon.
 
-We have collected a report of every \alert{resident} in our community that has \alert{seen} a \alert{ghost}. Each \alert{resident} was asked "how many \alert{ghosts} have you \alert{seen}?", "describe the last \alert{ghost} you \alert{saw}", and "tell us about your mother." Afterwards, we compared the ghost reports between the different \alert{individuals}, and assessed whether or not they had actually \alert{seen} these \alert{apparitions}.
+We have collected a report of every **resident** in our community that has **seen** a **ghost**. Each **resident** was asked "how many **ghosts** have you **seen**?", "describe the last **ghost** you **saw**", and "tell us about your mother." Afterwards, we compared the ghost reports between the different **individuals**, and assessed whether or not they had actually **seen** these **apparitions**.
 
 ---
 
@@ -152,8 +152,8 @@ For words which are more common, we lower their weights.
 
   What is Natural Language Processing?
 
-  * \url{https://en.wikipedia.org/wiki/Natural-language_processing\#History}
-  * \url{https://www.cl.cam.ac.uk/archive/ksj21/histdw4.pdf}
+  * [https://en.wikipedia.org/wiki/Natural-language_processing\#History](https://en.wikipedia.org/wiki/Natural-language_processing\#History)
+  * [https://www.cl.cam.ac.uk/archive/ksj21/histdw4.pdf](\url{https://www.cl.cam.ac.uk/archive/ksj21/histdw4.pdf})
 
 
 ---
@@ -169,12 +169,104 @@ For words which are more common, we lower their weights.
 
 ---
 
+## Metric Space
+
+A metric space consists of a set (we'll call them **documents** in this context) and a distance metric between items in the set.
+
+* What are some possible measures of "distance" between two documents?
+
+---
+
+## Space
+
+(word count)
+
+---
+
+## Distances
+
+Now that we have our data into a numeric form, how can we determine a distance?
+
+---
+
+## Distances
+
+What about the distance between these two documents?
+
+* We have collected a report of every resident in our community that has seen a ghost. Each resident was asked "how many ghosts have you seen?", "describe the last ghost you saw", and "tell us about your mother." Afterwards, we compared the ghost reports between the different individuals, and assessed whether or not they had actually seen these apparitions.
+
+
+* We ask each resident how many ghosts they've seen.
+
+---
+
+## Distances
+
+We _might_ want a distance that ignores the "size" of the document.
+
+One option is to normalize our vectors to unit length, this has the advantage of keeping the "direction" while removing the size element. Once we normalize our vectors, the euclidian distance becomes proportional to:
+
+$$
+|| A - B ||^2 \propto 1 - A^TB = 1 - \cos \theta
+$$
+
+Where $1 - \cos \theta$ is referred to as the **cosine distance** and $1 - \cos \theta$ is referred to as the **cosine similarity**.
+
+---
+
+## Space
+
+Here we can see that we could recycle the TF-IDF concept from information retrieval!
+
+---
+
+
+
+## Distances
+
+What about a continuous metric space?
+
+---
+
+## Distances
+
+Semantic similarity.
+
+---
+
+## NGrams
+
+Sometimes, at my job, I use text mining.
+
+Sometimes, at my mining job, I text.
+
+---
+
+## NGrams
+
+"at my job, I use text mining"
+
+```
+["at my", "my job", "job I",
+"I use", "use text", "text mining"]
+```
+
+&nbsp;
+
+"at my mining job, I text"
+
+```
+["at my", "my mining", "mining job",
+"I text"]
+```
+
+---
+
 ## Natural Language Processing
 
 
   * In an attempt to create conversations, computer scientists brought in linguists.
   * There was a need to understand the semantic content of sentences.
-
 
 ---
 
@@ -189,6 +281,7 @@ For words which are more common, we lower their weights.
   * Clashes in Istanbul after angry mourners of a Turkish man is stabbed to death by an Afghani refugee
   * German woman stabbed to death by Syrian refugee on her doorstep
   * In memory to Bangladeshi migrant \#Manan stabbed to death 6y ago during pogrom orchestrated by Nona's
+  * great people? the people that kicked over jugs of water to let migrants die in the desert? those are not great people.
 
 ---
 
