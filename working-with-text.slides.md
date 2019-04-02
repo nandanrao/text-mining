@@ -21,9 +21,9 @@ date: April, 2019
 &nbsp;
 &nbsp;
 
-Statistical Modeling: The Two Cultures
+Statistical Modelling: The Two Cultures
 
-\url{https://projecteuclid.org/download/pdf_1/euclid.ss/1009213726}
+[https://projecteuclid.org/download/pdf_1/euclid.ss/1009213726](https://projecteuclid.org/download/pdf_1/euclid.ss/1009213726)
 
 ---
 
@@ -313,6 +313,6 @@ Grammar???
 
 ## Machine Learning with Language
 
-\url{https://github.com/nandanrao/text-mining/blob/master/dependency-tree-example.ipynb}
+[https://github.com/nandanrao/text-mining/blob/master/dependency-tree-example.ipynb](https://github.com/nandanrao/text-mining/blob/master/dependency-tree-example.ipynb)
 
 ---

@@ -21,15 +21,13 @@ date: April, 2019
 &nbsp;
 &nbsp;
 
-Statistical Modeling: The Two Cultures
+Statistical Modelling: The Two Cultures
 
-\url{https://projecteuclid.org/download/pdf_1/euclid.ss/1009213726}
+[https://projecteuclid.org/download/pdf_1/euclid.ss/1009213726](https://projecteuclid.org/download/pdf_1/euclid.ss/1009213726)
 
 ---
 
-
 ## What is Information Retrieval?
-
 
   * Information retrieval $\approx$ search.
   * One of the basic, early problems of internet engineering and information organization.
@@ -179,7 +177,7 @@ A metric space consists of a set (we'll call them **documents** in this context)
 
 ## Space
 
-(word count)
+(word count example)
 
 ---
 
@@ -216,25 +214,27 @@ Where $1 - \cos \theta$ is referred to as the **cosine distance** and $1 - \cos 
 
 ## Space
 
-Here we can see that we could recycle the TF-IDF concept from information retrieval!
+What about the similarity of these two documents:
 
----
+People who see ghosts are full of crap. I don't believe a word they say. They didn't actually see any ghosts. No way! They are just seeing things.
 
-
-
-## Distances
-
-What about a continuous metric space?
-
----
-
-## Distances
-
-Semantic similarity.
+We talked to lots of people who have seen ghosts. Each person was asked "how many ghosts have you seen?" They had a lot of interesting and disturbing stories about the ghosts in their lives.
 
 ---
 
 ## NGrams
+
+With the previous example, stemming/lemmatization + NGrams + TF-IDF would yield a feature:
+
+"see ghost"
+
+which would most likely be very highly weighted (depending on the corpus). This would help these two documents to be very similar, even though they are not in the simple BOW space.
+
+---
+
+## NGrams
+
+Similarly, in a 2-gram space these two documents separate:
 
 Sometimes, at my job, I use text mining.
 
@@ -262,8 +262,34 @@ Sometimes, at my mining job, I text.
 
 ---
 
-## Natural Language Processing
+## Distances
 
+What about a continuous metric space?
+
+---
+
+## Distances
+
+Co-occurences can be used as a proxy for semantic similarity.
+
+---
+
+## Distances
+
+(embedding example)
+
+---
+
+## Distances
+
+Other ways to think about semantic structure of a sentence?
+
+Grammar???
+
+---
+
+
+## Natural Language Processing
 
   * In an attempt to create conversations, computer scientists brought in linguists.
   * There was a need to understand the semantic content of sentences.
@@ -285,22 +311,11 @@ Sometimes, at my mining job, I text.
 
 ---
 
-
 ## Machine Learning with Language
 
-\url{https://github.com/nandanrao/text-mining/blob/master/Dependency-Tree%20Example.ipynb}
+[https://github.com/nandanrao/text-mining/blob/master/dependency-tree-example.ipynb](https://github.com/nandanrao/text-mining/blob/master/dependency-tree-example.ipynb)
 
 ---
-
-## Workshop
-
-  * Introduce Libraries
-  * Ngrams
-  * Stemmers \& Lemmatizers
-  * Wordnet \& Synonyms
-  * Sparse Matrices
-  * Language Detection / Multilingual
-  * Vector Embeddings
 
 ---
 title: Text Mining for Social Sciences
