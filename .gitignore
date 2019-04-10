@@ -104,5 +104,9 @@ venv.bak/
 # mypy
 .mypy_cache/
 
+# ignore data files
+/data/sentiment/*
+
+
 
 # End of https://www.gitignore.io/api/python
