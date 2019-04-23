@@ -7,9 +7,9 @@ date: April, 2019
 ## Outline
 
 * Seeking fewer dimensions
-* Neural network basics
-* coocurrences = similarity
-*
+* Supervising dimension reduction
+* Unsupervised supervision 
+* Word2Vec + GloVe
 
 ---
 
@@ -87,7 +87,7 @@ How can we learn our parameters $W$ and $\Phi$?
 
 Via gradients!
 $$
-\frac{\partial{W}}{\partial{\ell}} \ \ \frac{\partial{\Phi}}{\partial{\ell}}
+\frac{\partial{\ell}}{\partial{W}} \ \ \frac{\partial{\ell}}{\partial{\Phi}}
 $$
 
 Now we can use stochastic gradient descent to optimize the parameters.
@@ -99,10 +99,10 @@ Now we can use stochastic gradient descent to optimize the parameters.
 Hopefully it's clear that we can use the chain rule to achieve those gradients:
 
 $$
-\frac{\partial{W}}{\partial{\ell}} = \frac{\partial{\sigma}}{\partial{\ell}} \frac{\partial{(W^TX)^T\Phi}}{\partial{\sigma}} \frac{\partial{W^TX}}{\partial{(W^TX)^T\Phi}} \frac{\partial{W}}{\partial{W^TX}}
+\frac{\partial{\ell}}{\partial{W}} = \frac{\partial{\ell}}{\partial{\sigma}} \frac{\partial{\sigma}}{\partial{(W^TX)^T\Phi}} \frac{\partial{(W^TX)^T\Phi}}{\partial{W^TX}} \frac{\partial{W^TX}}{\partial{W}}
 $$
 $$
-\frac{\partial{\Phi}}{\partial{\ell}} = \frac{\partial{\sigma}}{\partial{\ell}} \frac{\partial{(W^TX)^T\Phi}}{\partial{\sigma}} \frac{\partial{\Phi}}{\partial{(W^TX)^T\Phi}}
+\frac{\partial{\ell}}{\partial{\Phi}} = \frac{\partial{\ell}}{\partial{\sigma}} \frac{\partial{\sigma}}{\partial{(W^TX)^T\Phi}} \frac{\partial{(W^TX)^T\Phi}}{\partial{\Phi}}
 $$
 
 ---
