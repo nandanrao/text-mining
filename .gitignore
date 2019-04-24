@@ -106,6 +106,7 @@ venv.bak/
 
 # ignore data files
 /data/sentiment
+/data/tweets.txt
 
 
 
