@@ -8,7 +8,7 @@ date: April, 2019
 
 * Seeking fewer dimensions
 * Supervising dimension reduction
-* Unsupervised supervision 
+* Unsupervised supervision
 * Word2Vec + GloVe
 
 ---
@@ -69,14 +69,14 @@ This is a reasonable assumption, given no constraints on how we create that spac
 
 Let's add a (potentially less reasonable) constraint that the latent space is achievable via a linear transformation of the TF matrix.
 
-Thus, our model looks like
-
+Our model looks like
 $$
 \hat{y} = \sigma \bigg( (W^TX)^T\Phi \bigg)
 $$
-And our loss function:
+
+where the logistic function $\sigma$ is given by:
 $$
-\ell(\hat{y}, y)
+\sigma(n) = \frac{1}{1 + \exp^{-n}}
 $$
 
 ---
@@ -85,7 +85,12 @@ $$
 
 How can we learn our parameters $W$ and $\Phi$?
 
-Via gradients!
+Given a loss function:
+$$
+\ell(\hat{y}, y)
+$$
+
+We can learn the parameters via gradients!
 $$
 \frac{\partial{\ell}}{\partial{W}} \ \ \frac{\partial{\ell}}{\partial{\Phi}}
 $$
@@ -228,8 +233,10 @@ Does this sound like a familiar problem and solution?
 
 So what do we gain from Word2Vec over our LSA?
 
-* More semantic meaning captured by embeddings (try on Yelp classification!)
-* This can be seen from the vector operations in semantic space (examples on Twitter)
+* Performs better across the board, highly transportable from domain to domain.
+* Why?
+* LSA purely maximizes variance across documents as represented by word count vector.
+* Word2Vec learns words by their neighbors, ignores differences in documents.
 
 ---
 
@@ -264,10 +271,8 @@ Common words are a problem!
 
 Neural embeddings are extremely useful.
 
-A lot of that use comes down to transfer learning. Either we are looking to deal with a covariate shift in $p(X)$ or we don't have enough data to accurately estimate the true $p(X)$ given the labeled data we have.
+A lot of that use comes down to transfer learning. In particular, we are trying to learn a feature space that can be shared across problems. This allows us to learn the function (embedding layer) that moves from words to feature space in one context (with a lot of data) and use that same feature representation in another context.
 
 Whatever your dataset or model is, you can leverage the basic knowledge of the language, or specific knowledge of language in your domain if you have a large unlabeled corpus.
 
 This can help both deep learning models and simple models.
-
----
